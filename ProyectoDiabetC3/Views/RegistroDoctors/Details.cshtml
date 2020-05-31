@@ -1,0 +1,66 @@
+﻿@model ProyectoDiabetC3.Models.RegistroDoctor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RegistroDoctor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoPatDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoPatDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoMatDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMatDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contraseña)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CedulaProfesional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CedulaProfesional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaciónAcademica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaciónAcademica)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CorreoDoc }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

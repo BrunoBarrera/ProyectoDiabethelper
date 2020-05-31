@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ac07a0451c1f453fa6936d8003ddb341" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="ProgramaHelperModel.CitasAgendadas" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramaHelperModel.ExpedientePaciente" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramaHelperModel.Niveles" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramaHelperModel.Recetas" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramaHelperModel.RegistroDoctor" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProgramaHelperModel.RegistroPaciente" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorreoDocCitas" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorreoPacienteCitas" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorreoDocExp" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorrePacExp" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorreoDoctorNiveles" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorreoMedicoNiveles" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorreoDoctorRecetas" ManuallyRouted="false" />
+        <AssociationConnector Association="ProgramaHelperModel.fk_CorreoMedicoRecetas" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

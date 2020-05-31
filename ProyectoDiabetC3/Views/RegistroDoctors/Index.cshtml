@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProyectoDiabetC3.Models.RegistroDoctor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoPatDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoMatDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CedulaProfesional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormaciónAcademica)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoPatDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoMatDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contraseña)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CedulaProfesional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormaciónAcademica)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CorreoDoc }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CorreoDoc }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CorreoDoc })
+        </td>
+    </tr>
+}
+
+</table>

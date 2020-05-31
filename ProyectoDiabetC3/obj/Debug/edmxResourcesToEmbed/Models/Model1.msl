@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProgramaHelperModelStoreContainer" CdmEntityContainer="ProgramaHelperEntities">
+    <EntitySetMapping Name="CitasAgendadas">
+      <EntityTypeMapping TypeName="ProgramaHelperModel.CitasAgendadas">
+        <MappingFragment StoreEntitySet="CitasAgendadas">
+          <ScalarProperty Name="IDCita" ColumnName="IDCita" />
+          <ScalarProperty Name="CorreoPaciente" ColumnName="CorreoPaciente" />
+          <ScalarProperty Name="NombrePac" ColumnName="NombrePac" />
+          <ScalarProperty Name="ApellidoPatPac" ColumnName="ApellidoPatPac" />
+          <ScalarProperty Name="ApellidoMatPac" ColumnName="ApellidoMatPac" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="CorreoDoc" ColumnName="CorreoDoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpedientePaciente">
+      <EntityTypeMapping TypeName="ProgramaHelperModel.ExpedientePaciente">
+        <MappingFragment StoreEntitySet="ExpedientePaciente">
+          <ScalarProperty Name="IDExpediente" ColumnName="IDExpediente" />
+          <ScalarProperty Name="CorreoPaciente" ColumnName="CorreoPaciente" />
+          <ScalarProperty Name="NombrePac" ColumnName="NombrePac" />
+          <ScalarProperty Name="ApellidoPatPac" ColumnName="ApellidoPatPac" />
+          <ScalarProperty Name="ApellidoMatPac" ColumnName="ApellidoMatPac" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Enfermedad" ColumnName="Enfermedad" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="TipoDeSangre" ColumnName="TipoDeSangre" />
+          <ScalarProperty Name="TratamientosActuales" ColumnName="TratamientosActuales" />
+          <ScalarProperty Name="TratamientosAnteriores" ColumnName="TratamientosAnteriores" />
+          <ScalarProperty Name="CorreoDoc" ColumnName="CorreoDoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Niveles">
+      <EntityTypeMapping TypeName="ProgramaHelperModel.Niveles">
+        <MappingFragment StoreEntitySet="Niveles">
+          <ScalarProperty Name="IDNiveles" ColumnName="IDNiveles" />
+          <ScalarProperty Name="CorreoPaciente" ColumnName="CorreoPaciente" />
+          <ScalarProperty Name="NombrePac" ColumnName="NombrePac" />
+          <ScalarProperty Name="ApellidoPatPac" ColumnName="ApellidoPatPac" />
+          <ScalarProperty Name="ApellidoMatPac" ColumnName="ApellidoMatPac" />
+          <ScalarProperty Name="Enfermedad" ColumnName="Enfermedad" />
+          <ScalarProperty Name="Niveles_glucosa" ColumnName="Niveles_glucosa" />
+          <ScalarProperty Name="Niveles_presion" ColumnName="Niveles_presion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="CorreoDoc" ColumnName="CorreoDoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recetas">
+      <EntityTypeMapping TypeName="ProgramaHelperModel.Recetas">
+        <MappingFragment StoreEntitySet="Recetas">
+          <ScalarProperty Name="IDReceta" ColumnName="IDReceta" />
+          <ScalarProperty Name="CorreoPaciente" ColumnName="CorreoPaciente" />
+          <ScalarProperty Name="NombrePac" ColumnName="NombrePac" />
+          <ScalarProperty Name="ApellidoPatPac" ColumnName="ApellidoPatPac" />
+          <ScalarProperty Name="ApellidoMatPac" ColumnName="ApellidoMatPac" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="CorreoDoc" ColumnName="CorreoDoc" />
+          <ScalarProperty Name="InfoReceta" ColumnName="InfoReceta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistroDoctor">
+      <EntityTypeMapping TypeName="ProgramaHelperModel.RegistroDoctor">
+        <MappingFragment StoreEntitySet="RegistroDoctor">
+          <ScalarProperty Name="NombreDoc" ColumnName="NombreDoc" />
+          <ScalarProperty Name="ApellidoPatDoc" ColumnName="ApellidoPatDoc" />
+          <ScalarProperty Name="ApellidoMatDoc" ColumnName="ApellidoMatDoc" />
+          <ScalarProperty Name="CorreoDoc" ColumnName="CorreoDoc" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+          <ScalarProperty Name="CedulaProfesional" ColumnName="CedulaProfesional" />
+          <ScalarProperty Name="FormaciónAcademica" ColumnName="FormaciónAcademica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistroPaciente">
+      <EntityTypeMapping TypeName="ProgramaHelperModel.RegistroPaciente">
+        <MappingFragment StoreEntitySet="RegistroPaciente">
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="ApellidoPatPac" ColumnName="ApellidoPatPac" />
+          <ScalarProperty Name="ApellidoMatPac" ColumnName="ApellidoMatPac" />
+          <ScalarProperty Name="CorreoPaciente" ColumnName="CorreoPaciente" />
+          <ScalarProperty Name="ContraseñaPaciente" ColumnName="ContraseñaPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

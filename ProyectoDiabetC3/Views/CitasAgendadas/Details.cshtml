@@ -1,0 +1,66 @@
+﻿@model ProyectoDiabetC3.Models.CitasAgendadas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CitasAgendadas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoPatPac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoPatPac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoMatPac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMatPac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistroDoctor.NombreDoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistroDoctor.NombreDoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistroPaciente.NombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistroPaciente.NombreUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCita }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

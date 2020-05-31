@@ -1,0 +1,50 @@
+﻿@model ProyectoDiabetC3.Models.RegistroPaciente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RegistroPaciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreUsuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoPatPac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoPatPac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoMatPac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMatPac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContraseñaPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContraseñaPaciente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CorreoPaciente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

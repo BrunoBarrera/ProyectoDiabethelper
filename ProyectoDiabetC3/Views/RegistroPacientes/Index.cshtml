@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProyectoDiabetC3.Models.RegistroPaciente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoPatPac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoMatPac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContraseñaPaciente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoPatPac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoMatPac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContraseñaPaciente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CorreoPaciente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CorreoPaciente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CorreoPaciente })
+        </td>
+    </tr>
+}
+
+</table>

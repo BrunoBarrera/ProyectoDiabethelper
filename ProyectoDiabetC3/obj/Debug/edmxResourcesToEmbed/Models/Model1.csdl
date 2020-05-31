@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProgramaHelperModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CitasAgendadas">
+    <Key>
+      <PropertyRef Name="IDCita" />
+    </Key>
+    <Property Name="IDCita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CorreoPaciente" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NombrePac" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="CorreoDoc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RegistroDoctor" Relationship="Self.fk_CorreoDocCitas" FromRole="CitasAgendadas" ToRole="RegistroDoctor" />
+    <NavigationProperty Name="RegistroPaciente" Relationship="Self.fk_CorreoPacienteCitas" FromRole="CitasAgendadas" ToRole="RegistroPaciente" />
+  </EntityType>
+  <EntityType Name="ExpedientePaciente">
+    <Key>
+      <PropertyRef Name="IDExpediente" />
+    </Key>
+    <Property Name="IDExpediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CorreoPaciente" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NombrePac" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Sexo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Edad" Type="Int32" />
+    <Property Name="Enfermedad" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Peso" Type="Double" />
+    <Property Name="TipoDeSangre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TratamientosActuales" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="TratamientosAnteriores" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoDoc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RegistroDoctor" Relationship="Self.fk_CorreoDocExp" FromRole="ExpedientePaciente" ToRole="RegistroDoctor" />
+    <NavigationProperty Name="RegistroPaciente" Relationship="Self.fk_CorrePacExp" FromRole="ExpedientePaciente" ToRole="RegistroPaciente" />
+  </EntityType>
+  <EntityType Name="Niveles">
+    <Key>
+      <PropertyRef Name="IDNiveles" />
+    </Key>
+    <Property Name="IDNiveles" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CorreoPaciente" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NombrePac" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Enfermedad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Niveles_glucosa" Type="Double" />
+    <Property Name="Niveles_presion" Type="Double" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="CorreoDoc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RegistroDoctor" Relationship="Self.fk_CorreoDoctorNiveles" FromRole="Niveles" ToRole="RegistroDoctor" />
+    <NavigationProperty Name="RegistroPaciente" Relationship="Self.fk_CorreoMedicoNiveles" FromRole="Niveles" ToRole="RegistroPaciente" />
+  </EntityType>
+  <EntityType Name="Recetas">
+    <Key>
+      <PropertyRef Name="IDReceta" />
+    </Key>
+    <Property Name="IDReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CorreoPaciente" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NombrePac" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="CorreoDoc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="InfoReceta" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RegistroDoctor" Relationship="Self.fk_CorreoDoctorRecetas" FromRole="Recetas" ToRole="RegistroDoctor" />
+    <NavigationProperty Name="RegistroPaciente" Relationship="Self.fk_CorreoMedicoRecetas" FromRole="Recetas" ToRole="RegistroPaciente" />
+  </EntityType>
+  <EntityType Name="RegistroDoctor">
+    <Key>
+      <PropertyRef Name="CorreoDoc" />
+    </Key>
+    <Property Name="NombreDoc" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPatDoc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMatDoc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoDoc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contraseña" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="CedulaProfesional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FormaciónAcademica" Type="String" MaxLength="900" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CitasAgendadas" Relationship="Self.fk_CorreoDocCitas" FromRole="RegistroDoctor" ToRole="CitasAgendadas" />
+    <NavigationProperty Name="ExpedientePaciente" Relationship="Self.fk_CorreoDocExp" FromRole="RegistroDoctor" ToRole="ExpedientePaciente" />
+    <NavigationProperty Name="Niveles" Relationship="Self.fk_CorreoDoctorNiveles" FromRole="RegistroDoctor" ToRole="Niveles" />
+    <NavigationProperty Name="Recetas" Relationship="Self.fk_CorreoDoctorRecetas" FromRole="RegistroDoctor" ToRole="Recetas" />
+  </EntityType>
+  <EntityType Name="RegistroPaciente">
+    <Key>
+      <PropertyRef Name="CorreoPaciente" />
+    </Key>
+    <Property Name="NombreUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoMatPac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CorreoPaciente" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContraseñaPaciente" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CitasAgendadas" Relationship="Self.fk_CorreoPacienteCitas" FromRole="RegistroPaciente" ToRole="CitasAgendadas" />
+    <NavigationProperty Name="ExpedientePaciente" Relationship="Self.fk_CorrePacExp" FromRole="RegistroPaciente" ToRole="ExpedientePaciente" />
+    <NavigationProperty Name="Niveles" Relationship="Self.fk_CorreoMedicoNiveles" FromRole="RegistroPaciente" ToRole="Niveles" />
+    <NavigationProperty Name="Recetas" Relationship="Self.fk_CorreoMedicoRecetas" FromRole="RegistroPaciente" ToRole="Recetas" />
+  </EntityType>
+  <Association Name="fk_CorreoDocCitas">
+    <End Role="RegistroDoctor" Type="Self.RegistroDoctor" Multiplicity="0..1" />
+    <End Role="CitasAgendadas" Type="Self.CitasAgendadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroDoctor">
+        <PropertyRef Name="CorreoDoc" />
+      </Principal>
+      <Dependent Role="CitasAgendadas">
+        <PropertyRef Name="CorreoDoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CorreoPacienteCitas">
+    <End Role="RegistroPaciente" Type="Self.RegistroPaciente" Multiplicity="0..1" />
+    <End Role="CitasAgendadas" Type="Self.CitasAgendadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroPaciente">
+        <PropertyRef Name="CorreoPaciente" />
+      </Principal>
+      <Dependent Role="CitasAgendadas">
+        <PropertyRef Name="CorreoPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CorreoDocExp">
+    <End Role="RegistroDoctor" Type="Self.RegistroDoctor" Multiplicity="0..1" />
+    <End Role="ExpedientePaciente" Type="Self.ExpedientePaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroDoctor">
+        <PropertyRef Name="CorreoDoc" />
+      </Principal>
+      <Dependent Role="ExpedientePaciente">
+        <PropertyRef Name="CorreoDoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CorrePacExp">
+    <End Role="RegistroPaciente" Type="Self.RegistroPaciente" Multiplicity="0..1" />
+    <End Role="ExpedientePaciente" Type="Self.ExpedientePaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroPaciente">
+        <PropertyRef Name="CorreoPaciente" />
+      </Principal>
+      <Dependent Role="ExpedientePaciente">
+        <PropertyRef Name="CorreoPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CorreoDoctorNiveles">
+    <End Role="RegistroDoctor" Type="Self.RegistroDoctor" Multiplicity="0..1" />
+    <End Role="Niveles" Type="Self.Niveles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroDoctor">
+        <PropertyRef Name="CorreoDoc" />
+      </Principal>
+      <Dependent Role="Niveles">
+        <PropertyRef Name="CorreoDoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CorreoMedicoNiveles">
+    <End Role="RegistroPaciente" Type="Self.RegistroPaciente" Multiplicity="0..1" />
+    <End Role="Niveles" Type="Self.Niveles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroPaciente">
+        <PropertyRef Name="CorreoPaciente" />
+      </Principal>
+      <Dependent Role="Niveles">
+        <PropertyRef Name="CorreoPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CorreoDoctorRecetas">
+    <End Role="RegistroDoctor" Type="Self.RegistroDoctor" Multiplicity="0..1" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroDoctor">
+        <PropertyRef Name="CorreoDoc" />
+      </Principal>
+      <Dependent Role="Recetas">
+        <PropertyRef Name="CorreoDoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CorreoMedicoRecetas">
+    <End Role="RegistroPaciente" Type="Self.RegistroPaciente" Multiplicity="0..1" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistroPaciente">
+        <PropertyRef Name="CorreoPaciente" />
+      </Principal>
+      <Dependent Role="Recetas">
+        <PropertyRef Name="CorreoPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProgramaHelperEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CitasAgendadas" EntityType="Self.CitasAgendadas" />
+    <EntitySet Name="ExpedientePaciente" EntityType="Self.ExpedientePaciente" />
+    <EntitySet Name="Niveles" EntityType="Self.Niveles" />
+    <EntitySet Name="Recetas" EntityType="Self.Recetas" />
+    <EntitySet Name="RegistroDoctor" EntityType="Self.RegistroDoctor" />
+    <EntitySet Name="RegistroPaciente" EntityType="Self.RegistroPaciente" />
+    <AssociationSet Name="fk_CorreoDocCitas" Association="Self.fk_CorreoDocCitas">
+      <End Role="RegistroDoctor" EntitySet="RegistroDoctor" />
+      <End Role="CitasAgendadas" EntitySet="CitasAgendadas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CorreoPacienteCitas" Association="Self.fk_CorreoPacienteCitas">
+      <End Role="RegistroPaciente" EntitySet="RegistroPaciente" />
+      <End Role="CitasAgendadas" EntitySet="CitasAgendadas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CorreoDocExp" Association="Self.fk_CorreoDocExp">
+      <End Role="RegistroDoctor" EntitySet="RegistroDoctor" />
+      <End Role="ExpedientePaciente" EntitySet="ExpedientePaciente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CorrePacExp" Association="Self.fk_CorrePacExp">
+      <End Role="RegistroPaciente" EntitySet="RegistroPaciente" />
+      <End Role="ExpedientePaciente" EntitySet="ExpedientePaciente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CorreoDoctorNiveles" Association="Self.fk_CorreoDoctorNiveles">
+      <End Role="RegistroDoctor" EntitySet="RegistroDoctor" />
+      <End Role="Niveles" EntitySet="Niveles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CorreoMedicoNiveles" Association="Self.fk_CorreoMedicoNiveles">
+      <End Role="RegistroPaciente" EntitySet="RegistroPaciente" />
+      <End Role="Niveles" EntitySet="Niveles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CorreoDoctorRecetas" Association="Self.fk_CorreoDoctorRecetas">
+      <End Role="RegistroDoctor" EntitySet="RegistroDoctor" />
+      <End Role="Recetas" EntitySet="Recetas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CorreoMedicoRecetas" Association="Self.fk_CorreoMedicoRecetas">
+      <End Role="RegistroPaciente" EntitySet="RegistroPaciente" />
+      <End Role="Recetas" EntitySet="Recetas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

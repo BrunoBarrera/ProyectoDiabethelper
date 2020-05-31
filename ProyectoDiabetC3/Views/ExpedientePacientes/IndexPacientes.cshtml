@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ProyectoDiabetC3.Models.ExpedientePaciente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombrePac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoPatPac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoMatPac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enfermedad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeSangre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TratamientosActuales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TratamientosAnteriores)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistroDoctor.NombreDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistroPaciente.NombreUsuario)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoPatPac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoMatPac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enfermedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDeSangre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TratamientosActuales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TratamientosAnteriores)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistroDoctor.NombreDoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistroPaciente.NombreUsuario)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDExpediente }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDExpediente }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDExpediente })
+            </td>
+        </tr>
+    }
+
+</table>
